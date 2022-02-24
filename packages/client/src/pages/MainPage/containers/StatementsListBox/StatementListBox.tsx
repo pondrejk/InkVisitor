@@ -25,6 +25,7 @@ import {
   FaPlus,
   FaTrashAlt,
 } from "react-icons/fa";
+import { BsArrowReturnRight } from "react-icons/bs";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { Cell, Column } from "react-table";
 import { toast } from "react-toastify";
@@ -253,7 +254,16 @@ export const StatementListBox: React.FC = () => {
     return (
       actantObject && (
         <div key={key}>
-          <div style={{ marginTop: "4px", display: "flex" }}>
+          <div
+            style={{
+              marginTop: "1px",
+              marginLeft: "2.5em",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <BsArrowReturnRight size="20" />
+            <span>(fun)&nbsp;</span>
             <EntityTag
               key={key}
               actant={actantObject}
@@ -544,7 +554,6 @@ export const StatementListBox: React.FC = () => {
           if (actions) {
             return (
               <>
-                <div>{actions.length > 0 ? <i>Actions</i> : ""}</div>
                 <TagGroup>
                   <div style={{ display: "block" }}>
                     {actions.map((action: IAction, key: number) =>
@@ -575,7 +584,6 @@ export const StatementListBox: React.FC = () => {
 
           return (
             <>
-              <div>{actantObjects.length > 0 ? <i>Actants</i> : ""}</div>
               <TagGroup>
                 <div style={{ display: "block" }}>
                   {actantObjects.map((actantObject: IEntity, key: number) =>
@@ -602,7 +610,6 @@ export const StatementListBox: React.FC = () => {
           });
           return (
             <>
-              <div>{actantObjects.length > 0 ? <i>References</i> : ""}</div>
               <TagGroup>
                 <div style={{ display: "block" }}>
                   {actantObjects.map((actantObject: IEntity, key: number) =>

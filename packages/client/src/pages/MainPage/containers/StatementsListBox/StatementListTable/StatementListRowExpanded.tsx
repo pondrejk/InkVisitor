@@ -23,24 +23,22 @@ export const StatementListRowExpanded: React.FC<StatementListRowExpanded> = ({
         row.values.data;
       return (
         <>
-          <StyledSubRow id={`statement${row.values.id}`}>
-            {row.cells.map((cell: Cell) => {
-              if (
-                [
-                  "exp-actions",
-                  "exp-actants",
-                  "exp-references",
-                  "exp-tags",
-                ].includes(cell.column.id)
-              ) {
-                return (
-                  <StyledSubRowTd {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </StyledSubRowTd>
-                );
-              }
-            })}
-          </StyledSubRow>
+          {row.cells.map((cell: Cell) => {
+            if (
+              [
+                "exp-actions",
+                "exp-actants",
+                "exp-references",
+                "exp-tags",
+              ].includes(cell.column.id)
+            ) {
+              return (
+                <StyledSubRow {...cell.getCellProps()}>
+                  <span>{cell.render("Cell")}</span>
+                </StyledSubRow>
+              );
+            }
+          })}
         </>
       );
     },

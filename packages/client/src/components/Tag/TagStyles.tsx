@@ -10,7 +10,7 @@ interface StyledTagWrapper {
 export const StyledTagWrapper = styled.div<StyledTagWrapper>`
   display: inline-flex;
   overflow: hidden;
-  border: ${({ theme }) => theme.borderWidth[2]};
+  border: ${({ theme }) => theme.borderWidth[1]};
   border-style: ${({ borderStyle }) => borderStyle};
   border-color: ${({ theme, status }) => theme.color[status]};
   border-radius: ${({ theme }) => theme.borderRadius["sm"]};
@@ -67,7 +67,7 @@ export const StyledLabel = styled.div<StyledLabel>`
   color: ${({ theme, invertedLabel }) =>
     invertedLabel ? theme.color["white"] : theme.color["black"]};
   border-left-width: ${({ theme, labelOnly }) =>
-    labelOnly ? 0 : theme.borderWidth[2]};
+    labelOnly ? 0 : theme.borderWidth[0]};
   border-left-style: ${({ borderStyle }) => borderStyle};
   border-left-color: ${({ theme, status }) => theme.color[status]};
   max-width: ${({ theme, fullWidth }) =>
@@ -81,7 +81,7 @@ export const ButtonWrapper = styled.div<ButtonWrapper>`
   display: flex;
   button {
     border-width: 0;
-    border-left-width: ${({ theme }) => theme.borderWidth[2]};
+    border-left-width: ${({ theme }) => theme.borderWidth[0]};
     border-left-color: ${({ theme, status }) => theme.color[status]};
     border-left-style: solid;
   }

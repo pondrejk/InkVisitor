@@ -188,7 +188,7 @@ const MainPage: React.FC<MainPage> = ({ size }) => {
           color={
             ["production", ""].indexOf(environmentName) === -1
               ? environmentName
-              : "primary"
+              : "brand"
           }
           left={
             <StyledHeader>

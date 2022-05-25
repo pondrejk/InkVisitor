@@ -40,7 +40,7 @@ export default {
     grey: "#C4C4C4",
     greyer: "#4a5568",
     text: "#383737",
-    primary: "#6C6D92",
+    primary: "#BCCCDC",
     brand: "#091034",
     success: "#6174C2",
     warning: "#D8AA37",
